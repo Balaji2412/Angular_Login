@@ -1,0 +1,9 @@
+<p>dasbboard works!</p>
+
+<button (click)="logout()">Logout</button>
+
+<ul>
+    <li *ngFor="let anime of service.anime()"> 
+        {{anime.name}} of {{anime.hero}}
+    </li>
+</ul>

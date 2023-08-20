@@ -1,9 +1,21 @@
 <p>dasbboard works!</p>
 
-<button (click)="logout()">Logout</button>
 
-<ul>
-    <li *ngFor="let anime of service.anime()"> 
-        {{anime.name}} of {{anime.hero}}
-    </li>
-</ul>
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">NAMES</th>
+        <th scope="col">HEROS</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let anime of service.anime()">
+      <tr>
+        
+        <td> {{anime.name}} </td>
+        <td>{{anime.hero}}</td>
+      </tr>
+    </tbody>
+  </table>

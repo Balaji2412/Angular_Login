@@ -1,4 +1,4 @@
-<p>login works!</p>
+
 
 <!-- <div class="form">
 <form>
@@ -25,13 +25,54 @@
 </div> -->
 
 <form>  
-  <div class="container">   
-      <label>Username : </label>   
-      <input type="text" [(ngModel)]="email" placeholder="Enter Username" name="username" required>  
-      <label>Password : </label>   
-      <input type="password" [(ngModel)]="password" placeholder="Enter Password" name="password" required>  
-      <button type="submit" (click)="login()"[disabled]="email==''&&password=='' ">Login</button>   
+  <div class="body border" style="height:500px; text-align: center;">
+  <div class="container-md  border w-50 h-100" style="border-top: none;">  
      
-     
-  </div>   
+    <div class="row ">
+      <div class="col align-items-center my-3 " style="padding-top: 100px;">
+        <label class="mx-3">Username</label>   
+        <input type="text" class="w-50 " style="height: 45px;" [(ngModel)]="email" placeholder="Enter Username" name="username" required>  
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col align-items-center " >
+        <label class="mx-3">Password</label>   
+        <input type="password" class="w-50" style="height: 45px;" [(ngModel)]="password" placeholder="Enter Password" name="password" required>  
+      </div>
+     </div>
+      <div class="row my-2 d-grid justify-content-end  " style="text-align: left; ">
+        <div class="col " style="padding-right: 120px; padding-top: 10px;">
+          <button type="submit"   class="btn btn-primary" (click)="login()"[disabled]="email==''&&password=='' ">Login</button>   
+        </div>
+       </div>
+      
+  </div>  
+</div> 
+
+
 </form>
+
+
+
+  <!-- <div class="container-md">
+    
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <label for="inputPassword6" class="col-form-label">Password</label>
+      </div>
+      <div class="col-auto">
+        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+      </div>
+
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <label for="forusername" class="col-form-label">Email</label>
+        </div>
+        <div class="col-auto">
+          <input type="password" id="forusername" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        
+      </div>
+    </div>
+  </div> -->

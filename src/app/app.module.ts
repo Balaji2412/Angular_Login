@@ -10,6 +10,12 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DasbboardComponent } from './dasbboard/dasbboard.component';
 import { FirstserviceService } from './firstservice.service';
+import { DataserviceService } from './service/dataservice.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+
 
 @NgModule({
   declarations: [
@@ -17,15 +23,17 @@ import { FirstserviceService } from './firstservice.service';
     Comp1Component,
     LoginComponent,
     DasbboardComponent,
-   
-    
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatSlideToggleModule,
   ],
-  providers: [FirstserviceService],
+  providers: [DataserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

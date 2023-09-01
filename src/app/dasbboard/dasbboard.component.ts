@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { FirstserviceService } from '../firstservice.service';
 import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dasbboard',
   templateUrl: './dasbboard.component.html',
-  styleUrls: ['./dasbboard.component.css']
+  styleUrls: ['./dasbboard.component.css'],
+  
 })
 export class DasbboardComponent {
 
@@ -20,6 +21,16 @@ logout():void{
   this.router.navigate(['Login'])
 }
 
+apidata:any="";
+
+ngOnInit():void{
+
+  this.service.getdetails().subscribe((data:any[])=>{
+
+    this.apidata=data;
+    console.log(this.apidata)
+  })
+}
 
   
 }

@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+     
+import {  Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirstserviceService {
 
-  constructor() { }
-
+ 
+  constructor(public httpClient:HttpClient) { }
    message='hi this is from service';
 
    email='balaji24122000@gmail.com';
@@ -22,4 +25,18 @@ export class FirstserviceService {
    public anime(){
     return this.Anime;
    }
+
+   
+
+   private apiurl="https://jsonplaceholder.typicode.com/todos";
+
+   httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
+  getdetails():Observable<any>{
+    return this.httpClient.get(this.apiurl)
+  }
 }

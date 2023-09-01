@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FirstserviceService } from './firstservice.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'pro-one';
 
-  constructor( private router:Router){
+  constructor( private router:Router,private service:FirstserviceService){
 
     this.logoutCheck(); 
   } 
@@ -30,5 +31,16 @@ export class AppComponent {
     this.router.navigate(['Login']);
     
   }
+
+  apidata:any="";
+
+ngOnInit():void{
+
+  this.service.getdetails().subscribe((data:any[])=>{
+
+    this.apidata=data;
+    console.log(this.apidata)
+  })
+}
 
 }
